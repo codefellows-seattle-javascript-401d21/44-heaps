@@ -23,9 +23,9 @@ class MaxHeap{
         let temp = this.data[parentIdx];
         this.data[parentIdx] = this.data[currentIdx];
         this.data[currentIdx] = temp;
-        currentIdx = parentIdx;
-        parentIdx = this._findParentIdx(currentIdx);
       }
+      currentIdx = parentIdx;
+      parentIdx = this._findParentIdx(currentIdx);
     }
     this.lastIdx++;
     return this.data;
@@ -85,7 +85,7 @@ class MaxHeap{
         // if right child is larger than or equals to left child
         }else{
           // if right child is larger than parent, swap
-          if(this.data[righIdx] > temp){
+          if(this.data[rightIdx] > temp){
             let tempRight = this.data[rightIdx];
             this.data[currentIdx] = tempRight;
             this.data[rightIdx] = temp;
