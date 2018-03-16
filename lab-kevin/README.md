@@ -71,3 +71,43 @@ Normal mode
 
 >## Usage
 
+
+```JAVASCRIPT
+
+const MaxHeap = require('./lib/max-heap');
+
+let heap = new MaxHeap();
+
+console.log(heap);
+/*
+{
+  heap: [],
+  max: null,
+}
+*/
+
+heap.insert(21);
+
+console.log(heap);
+/*
+{
+  heap: [21],
+  max: 21,
+}
+*/
+
+let heap = new MaxHeap();
+[1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(val => heap.insert(val));
+
+console.log(heap);
+/*
+{
+  heap: [ 9, 8, 6, 7, 3, 2, 5, 1, 4 ], 
+  max: 9
+}
+*/
+
+
+
+```
+
