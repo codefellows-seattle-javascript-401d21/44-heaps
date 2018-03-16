@@ -6,7 +6,7 @@ const DFS = require('../lib/dfs');
 require('jest');
 
 describe('DFS Search',() => {
-  test('Simple Search',() => {
+  describe('Simple Search',() => {
     let graph = new Graph();
 
     // Create nodes
@@ -51,12 +51,15 @@ describe('DFS Search',() => {
     graph.addEdge(node15,node25);
     //--------------------------------------------------------------
 
-    let paths = DFS(graph,node5,node25);
-    console.log(paths);
-    expect(paths).not.toBeNull();
-    expect(paths.has(node25)).toBeTruthy();
-
-    let nonExistentPaths = DFS(graph,node5,node100);
-    expect(nonExistentPaths).toBe(undefined);
+    it('should contain a path from one node to another', () => {
+      let paths = DFS(graph,node5,node25);
+      console.log(paths);
+      expect(paths).not.toBeNull();
+      expect(paths.has(node25)).toBeTruthy();
+    });
+    it('should not have a path', () => {
+      let nonExistentPaths = DFS(graph,node5,node100);
+      expect(nonExistentPaths).toBe(undefined);
+    });
   });
 });
