@@ -1,0 +1,25 @@
+{
+  "name": "lab-kevin",
+  "version": "1.0.0",
+  "description": " lab 44 - Create a MaxHeap Prototype with a depth first insertion method",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "heap",
+    "Max",
+    "bubble",
+    "node"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "jest": "^22.4.2"
+  }
+}
