@@ -45,4 +45,19 @@ describe('MaxHeap module', () => {
       expect(Array.isArray(data)).toBe(true);
     })
   })
+
+  describe('findMax method', () => {
+    test('should return correct value', () => {
+      let maxHeap = new MaxHeap();
+      maxHeap.insert(1);
+      maxHeap.insert(2);
+      maxHeap.insert(3);
+      maxHeap.insert(4);
+      maxHeap.insert(5);
+      let max = maxHeap.findMax();
+
+      expect(max).toEqual(5);
+      expect(maxHeap.data).toEqual([4,3,2,1,null]);
+    })
+  })
 })
