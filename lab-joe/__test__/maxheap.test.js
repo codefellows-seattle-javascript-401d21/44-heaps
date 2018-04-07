@@ -25,7 +25,7 @@ describe('test maxHeap', () => {
             expect(testResult).toEqual([8, 7, 6, 5, 6])
             expect(testResult[0]).toBe(8)
             expect(testResult[4]).toBe(6)
-            expect(maximumHeap.lastIndex).toEqual(5)
+            expect(maximumHeap.lastHeapIndex).toEqual(5)
         });
         test('should return an ordered data array', () => {
             let maximumHeap = new MaxHeap()
@@ -46,7 +46,7 @@ describe('test maxHeap', () => {
             let maximumHeap = new MaxHeap()
             expect(maximumHeap.data).toEqual([])
             expect(maximumHeap.data).toBeInstanceOf(Array);
-            expect(maximumHeap.lastIndex).toEqual(0)
+            expect(maximumHeap.lastHeapIndex).toEqual(0)
         });
     });
 

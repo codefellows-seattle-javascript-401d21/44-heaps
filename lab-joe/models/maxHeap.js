@@ -3,30 +3,29 @@
 class MaxHeap {
     constructor() {
         this.data = []
-        this.lastIndex = 0
+        this.lastHeapIndex = 0
     }
-    _findParent(currentIndex) {
-        return Math.floor(Math.abs(currentIndex - 1) / 2)
+    _findParent(heapIndexCurrentVal) {
+        return Math.floor(Math.abs(heapIndexCurrentVal - 1) / 2)
     }
     insert(val) {
         // push a value into our array of data
         this.data.push(val)
         //insert the data in the correct position
-        let currentIndex = this.lastIndex
-        let parentIndex = this._findParent(currentIndex)
-        while (parentIndex !== currentIndex) {
-            // swap value with parent value under the condition the parent value is smaller than inserting value.
-            if (this.data[parentIndex] < this.data[currentIndex]) {
-
-                let temp = this.data[parentIndex]
-                this.data[parentIndex] = this.data[currentIndex]
-                this.data[currentIndex] = temp
+        let heapIndexCurrentVal = this.lastHeapIndex
+        let parentIndex = this._findParent(heapIndexCurrentVal)
+        while (parentIndex !== heapIndexCurrentVal) {
+            // swap value with parent value if the parent value is smaller than inserting value.
+            if (this.data[parentIndex] < this.data[heapIndexCurrentVal]) {
+                let temporaryValue = this.data[parentIndex]
+                this.data[parentIndex] = this.data[heapIndexCurrentVal]
+                this.data[heapIndexCurrentVal] = temporaryValue
             }
-            currentIndex = parentIndex
-            parentIndex = this._findParent(currentIndex)
+            heapIndexCurrentVal = parentIndex
+            parentIndex = this._findParent(heapIndexCurrentVal)
         }
         // increment last index by one
-        this.lastIndex++
+        this.lastHeapIndex++
         return this.data
     }
 
